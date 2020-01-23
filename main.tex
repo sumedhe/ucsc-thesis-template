@@ -1,0 +1,96 @@
+\documentclass [11pt,letterpaper,oneside,openright]{book}
+\usepackage[toc,page]{appendix}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage{mathptmx,etoolbox}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{minibox}
+\usepackage{acro}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{graphicx}
+% \usepackage{showframe}
+
+
+\renewcommand{\baselinestretch}{1.2} 
+
+\graphicspath{ {img/} }
+
+
+%% Include definitions
+\input{definitions.tex}
+\input{acronyms.tex}
+
+%% Set title
+\title{\titlename}
+\author{\authorname}
+\date{\titledate}
+
+
+\begin{document}
+
+\input{frontmatter/coverpage.tex}
+
+\input{frontmatter/titlepage.tex}
+
+\frontmatter
+\input{frontmatter/declaration.tex}
+\addcontentsline{toc}{chapter}{Declaration}
+
+\input{frontmatter/abstract.tex}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\input{frontmatter/preface.tex}
+\addcontentsline{toc}{chapter}{Preface}
+
+\input{frontmatter/acknowledgement.tex}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
+
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\todo
+
+\newpage
+\chapter*{Acronyms}
+\addcontentsline{toc}{chapter}{Acronyms}
+\printacronyms[name=Abbreviations]
+
+\mainmatter
+
+\input{mainmatter/1_introduction.tex}
+
+\input{mainmatter/2_literature_review.tex}
+
+\input{mainmatter/3_design.tex}
+
+\input{mainmatter/4_implementation.tex}
+
+\input{mainmatter/5_results_n_evaluation.tex}
+
+\input{mainmatter/6_conclusions.tex}
+
+% References
+\renewcommand\bibname{References}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\appendix
+\input{backmatter/1_publications.tex}
+
+\input{backmatter/2_diagrams.tex}
+
+\input{backmatter/3_code_listings.tex}
+
+\end{document}
+
